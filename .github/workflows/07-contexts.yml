@@ -1,8 +1,8 @@
 name: 07-contexts
 run-name: My custom workflow rn name - ${{inputs.debug}}
 env:
-    MY_VAR: 'HOLA CARACOLA'
-    
+    MY_WORKFLOW_VAR: workflow
+    MY_OVERWRITTEN_VAR: workflow
 on:
     push: 
     workflow_dispatch: 
@@ -14,6 +14,10 @@ on:
 
 jobs:
     echo-data:
+        env:
+            MY_JOB_VAR: job
+            MY_OVERWRITTEN_VAR: job
+        
         runs-on: ubuntu-latest
         steps:
             - name: showinfo
@@ -26,5 +30,14 @@ jobs:
                echo "ID de ejecución: ${{github.run_id}}""
                echo "Número de ejecución: ${{github.run_number}}""
             - name: Retrive Variable
-              run: echo ${{vars.MY_VAR}}
-    
+              run: echo "${{vars.MY_VAR}}"
+            - name: Print env Variables
+              env:
+                MY_WORKFLOW_VAR: step
+              run: |
+                echo "${{env.MY_WORKFLOW_VAR}}"
+                echo "${{env.MY_OVERWRITTEN_VAR}}"
+            - name: Print env Variables
+              run: |
+                echo "${{env.MY_WORKFLOW_VAR}}"
+                echo "${{env.MY_OVERWRITTEN_VAR}}"
