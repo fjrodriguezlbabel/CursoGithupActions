@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: print_GITHUB_OUTPUT
-              run: ${{print_GITHUB_OUTPUT}}
+              run: echo $GITHUB_OUTPUT
             - name: build
               id: build
               run: echo "status= ${{inputs.build-status}}" >> GITHUB_OUTPUT
