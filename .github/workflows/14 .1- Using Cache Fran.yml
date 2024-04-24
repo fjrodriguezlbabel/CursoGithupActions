@@ -1,0 +1,26 @@
+name: 14.1 - Using Cache Fran
+on: 
+    workflow_dispatch:
+        inputs:
+            use-cache:
+                description: 'Use cache to speed up the workflow'        
+                type: boolean
+                default: true
+            
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: my-app
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                 node-version: 20.x
+            - name: 
+
+            
+    
