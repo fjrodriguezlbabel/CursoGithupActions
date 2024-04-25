@@ -27,7 +27,7 @@ jobs:
             - name: install dependencies
               if: steps.cache.outputs.cache-hit != 'true'
               run: |
-                  npm ci
+                  npm i
 
             - name: Testing
               run: |
