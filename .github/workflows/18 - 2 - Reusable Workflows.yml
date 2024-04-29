@@ -13,7 +13,7 @@ jobs:
         needs: deploy
         steps:
             - name: Print outputs
-            runs: |
-             echo "${{needs.deploy.outputs.build-status}}"
-             echo "${{needs.deploy.outputs.url}}"
+              run: |
+                echo "${{needs.deploy.outputs.build-status}}"
+                echo "${{needs.deploy.outputs.url}}"
 
