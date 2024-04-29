@@ -27,10 +27,10 @@ jobs:
         - name: build
           id: build
           run: |
-            "Building using directory ${{inputs.target_directory}}"
+            echo "Building using directory ${{inputs.target_directory}}"
             echo "build-status=success" >> $GITHUB_OUTPUT
         - name: deploy
           id: deploy
           run: |
             echo "Deploying build artifacts"
-            echo " https://www.google.co" >> $GITHUB_OUTPUT
+            echo " https://www.google.com" >> $GITHUB_OUTPUT
