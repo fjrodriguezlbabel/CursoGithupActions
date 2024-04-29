@@ -4,7 +4,7 @@ on:
 
 jobs: 
     deploy:
-        uses: ./.github/workflows/18 - 1 - Reusable Workflows
+        uses: ./.github/workflows/18 - 1 - Reusable Workflows.yml
         with:
             target_directory: "ejemplo"
     
